@@ -1,0 +1,81 @@
+﻿@model IEnumerable<ProyectoDatosMasivos.Models.AnimalesModel>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Nombre_comun)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Nombre_cientifico)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Familia)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Especie)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Peligro_extincion)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Sexo)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Año_Nacimiento)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PaisOrigen)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Continente)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Nombre_comun)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Nombre_cientifico)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Familia)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Especie)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Peligro_extincion)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Sexo)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Año_Nacimiento)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PaisOrigen)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Continente)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
+            @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
+            @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+        </td>
+    </tr>
+}
+
+</table>
