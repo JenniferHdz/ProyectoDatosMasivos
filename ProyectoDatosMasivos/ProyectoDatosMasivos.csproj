@@ -191,7 +191,9 @@
     <Compile Include="App_Start\MongoDBContext.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\AnimalesController.cs" />
+    <Compile Include="Controllers\EmpleadosController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\ZooloficosController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -240,6 +242,20 @@
     <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Animales\Index.cshtml" />
+    <Content Include="Views\Animales\Details.cshtml" />
+    <Content Include="Views\Animales\Create.cshtml" />
+    <Content Include="Views\Animales\Edit.cshtml" />
+    <Content Include="Views\Empleados\Index.cshtml" />
+    <Content Include="Views\Empleados\Details.cshtml" />
+    <Content Include="Views\Empleados\Create.cshtml" />
+    <Content Include="Views\Empleados\Edit.cshtml" />
+    <Content Include="Views\Empleados\Delete.cshtml" />
+    <Content Include="Views\Zooloficos\Index.cshtml" />
+    <Content Include="Views\Zooloficos\Details.cshtml" />
+    <Content Include="Views\Zooloficos\Create.cshtml" />
+    <Content Include="Views\Zooloficos\Edit.cshtml" />
+    <Content Include="Views\Zooloficos\Delete.cshtml" />
+    <Content Include="Views\Animales\Delete.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

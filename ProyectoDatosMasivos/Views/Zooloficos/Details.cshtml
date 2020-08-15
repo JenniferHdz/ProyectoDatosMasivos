@@ -1,0 +1,68 @@
+﻿@model ProyectoDatosMasivos.Models.ZoologicosModel
+
+<div>
+    <h4>Detalle del Zoológico</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Nombre)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Nombre)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Ciudad)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Ciudad)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Pais)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Pais)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Continente)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Continente)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TamanoM2)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TamanoM2)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Encargado)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Encargado)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Cantidad_animales)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Cantidad_animales)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Editar", "Edit", new { id = Model.Id }) |
+    @Html.ActionLink("Regresar", "Index")
+</p>

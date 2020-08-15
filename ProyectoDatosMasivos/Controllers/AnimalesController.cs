@@ -32,22 +32,24 @@ namespace ProyectoDatosMasivos.Controllers
         // GET: Animales/Details/5
         public ActionResult Details(string id)
         {
-            return View();
+            var animalId = new ObjectId(id);
+            var animal = animalesCollection.AsQueryable<AnimalesModel>().SingleOrDefault(x => x.Id == animalId);
+            return View(animal);
         }
 
         // GET: Animales/Create
         public ActionResult Create()
         {
-            return View();
+            return View("Create");
         }
 
         // POST: Animales/Create
         [HttpPost]
-        public ActionResult Create(FormCollection model)//AnimalesModel model)
+        public ActionResult Create(AnimalesModel model)//AnimalesModel model)
         {
             try
             {
-                
+                animalesCollection.InsertOne(model);
                 return RedirectToAction("Index");
             }
             catch(Exception)
@@ -59,17 +61,29 @@ namespace ProyectoDatosMasivos.Controllers
         // GET: Animales/Edit/5
         public ActionResult Edit(string id)
         {
-            
-            return View();
+            var animalId = new ObjectId(id);
+            var animal = animalesCollection.AsQueryable<AnimalesModel>().SingleOrDefault(x => x.Id == animalId);
+            return View(animal);
         }
 
         // POST: Animales/Edit/5
         [HttpPost]
-        public ActionResult Edit(string id, FormCollection model)
+        public ActionResult Edit(string id, AnimalesModel model)
         {
             try
             {
-                
+                var filter = Builders<AnimalesModel>.Filter.Eq("_id", ObjectId.Parse(id));
+                var update = Builders<AnimalesModel>.Update
+                    .Set("nombre_comun", model.Nombre_comun)
+                    .Set("nombre_cientifico", model.Nombre_cientifico)
+                    .Set("familia", model.Familia)
+                    .Set("especie", model.Especie)
+                    .Set("peligro_ext", model.Peligro_extincion)
+                    .Set("sexo", model.Sexo)
+                    .Set("anio_Nac", model.Año_Nacimiento)
+                    .Set("paisOrigen", model.PaisOrigen)
+                    .Set("continente", model.Continente);
+                var result = animalesCollection.UpdateOne(filter, update);
                 return RedirectToAction("Index");
             }
             catch
@@ -81,16 +95,18 @@ namespace ProyectoDatosMasivos.Controllers
         // GET: Animales/Delete/5
         public ActionResult Delete(string id)
         {
-            
-            return View();
+            var animalId = new ObjectId(id);
+            var animal = animalesCollection.AsQueryable<AnimalesModel>().SingleOrDefault(x => x.Id == animalId);
+            return View(animal);
         }
 
         // POST: Animales/Delete/5
         [HttpPost]
-        public ActionResult Delete(string id, FormCollection model)
+        public ActionResult Delete(string id, AnimalesModel model)
         {
             try
             {
+                animalesCollection.DeleteOne(Builders<AnimalesModel>.Filter.Eq("_id", ObjectId.Parse(id)));
                 return RedirectToAction("Index");
             }
             catch

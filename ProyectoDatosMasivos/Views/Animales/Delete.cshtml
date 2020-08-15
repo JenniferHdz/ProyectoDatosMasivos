@@ -1,0 +1,90 @@
+﻿@model ProyectoDatosMasivos.Models.AnimalesModel
+
+<h3>Esta seguro del eliminar al animal?</h3>
+<div>
+    <h4>Eliminar animal</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Nombre_comun)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Nombre_comun)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Nombre_cientifico)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Nombre_cientifico)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Familia)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Familia)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Especie)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Especie)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Peligro_extincion)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Peligro_extincion)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Sexo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Sexo)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Año_Nacimiento)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Año_Nacimiento)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PaisOrigen)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PaisOrigen)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Continente)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Continente)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Regresar", "Index")
+        </div>
+    }
+</div>
